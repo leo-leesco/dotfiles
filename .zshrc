@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(zoxide init zsh)"
-export PATH=./.venv/bin:$PATH
+export PATH=./.venv/bin:../.venv/bin:$PATH
 export CPATH=/opt/homebrew/include
 # export LIBRARY_PATH=/opt/homebrew/lib
 # =============================================================================
