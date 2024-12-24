@@ -2,6 +2,10 @@
 
 The purpose of this repository is to centralize all configuration files and make them easily replicable on another computer.
 
+## Daily maintenance
+
+Whenever you update your configuration (more precisely, when there is a chance a new dotfile has been created), you should always move it, including folders, add it to `dotfiles` in order to version it and run `stow .` from the repository `dotfiles`.
+
 ## Dependencies
 
 You will need [stow](https://www.gnu.org/software/stow/). As I use a Mac, I install it via [Homebrew](https://brew.sh/) :
