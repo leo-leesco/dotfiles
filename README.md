@@ -2,54 +2,41 @@
 
 The purpose of this repository is to centralize all configuration files and make them easily replicable on another computer.
 
-## Daily maintenance
+## Usage
 
-Whenever you update your configuration (more precisely, when there is a chance a new dotfile has been created), you should always move it, including folders, add it to `dotfiles` in order to version it and run `stow .` from the repository `dotfiles`.
-
-## Dependencies
+### Dependencies
 
 You will need [stow](https://www.gnu.org/software/stow/). As I use a Mac, I install it via [Homebrew](https://brew.sh/) :
 ```shell
 brew install stow
 ```
 
-## Setup
-
-### Quick setup
-
-#### Clone the current config files
+### Setup
 
 ```shell
 cd
 git clone git@github.com:leo-leesco/dotfiles.git
-stow dotfiles/
+cd dotfiles
+git submodule update --init --recursive
+stow .
 ```
 
-#### Install the tools configured by the corresponding dotfiles
+### Daily maintenance
 
-So far, here are the tools I am using :
+Whenever you update your configuration (more precisely, when there is a chance a new dotfile has been created), you should always move it, including folders, add it to `dotfiles` in order to version it and run `stow .` from the repository `dotfiles`.
 
-- [Neovim](https://neovim.io)
-    - [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
-    - [Vim Tmux navigator](https://github.com/christoomey/vim-tmux-navigator)
-- [Tmux](http://tmux.github.io/)
-    - [Tmux Package Manager](https://github.com/tmux-plugins/tpm)
-    - [Vim Tmux navigator](https://github.com/christoomey/vim-tmux-navigator)
-- [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [LSDeluxe](https://github.com/lsd-rs/lsd.git)
+## Additional dependencies
 
-### Setup from scratch
+All dependencies listed here can be installed using `brew install <program>` :
+- `neovim`
+- `fish`
+- `tmux`
 
-#### One-liner that moves ALL dotfiles (CAREFUL !)
+### `clangd`
 
-Be careful with the following command as it will relocate all your files starting with a dot within your home directory !
-
-```shell
-cd
-mv .* dotfiles
-stow dotfiles/
+To integrate `brew` installs of `C` dependencies, run the following script :
+```fish
+mkdir ~/Library/Preferences/clangd
+echo "CompileFlags:
+  Add: [-I$(brew --prefix)/include, -L$(brew --prefix)/lib]" > ~/Library/Preferences/clangd/config.yaml
 ```
-
-#### Manual installation
-
-Simply replace `mv .* dotfiles` by `mv <configFileName> dotfiles`.
