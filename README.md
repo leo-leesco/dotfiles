@@ -40,12 +40,3 @@ The simplest way, provided `homebrew` is installed, is to run :
 sudo echo "/opt/homebrew/bin/fish" >> /etc/shells
 chsh -s /opt/homebrew/bin/fish
 ```
-
-### `clangd`
-
-To integrate `brew` installs of `C` dependencies, run the following script :
-```fish
-mkdir ~/Library/Preferences/clangd
-echo "CompileFlags:
-  Add: [-I$(brew --prefix)/include, -L$(brew --prefix)/lib]" > ~/Library/Preferences/clangd/config.yaml
-```
