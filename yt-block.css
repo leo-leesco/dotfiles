@@ -1,0 +1,23 @@
+/* YT */
+#related,
+ytd-section-list-renderer[page-subtype="home"],
+#masthead-ad,
+ytd-rich-grid-renderer,
+ytd-mealbar-promo-renderer,
+ytd-shorts
+{
+    display:none !important;
+}
+ytd-browse[page-subtype="home"] {
+    background-color:gray;
+    /* here is my YT background wallpaper, leave it or use a different url */
+background-image:url('https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg');
+    background-size:cover;
+	background-attachment:fixed;
+    background-position:50% 50%;
+	min-height:90vh;
+}
+#content {
+	min-height:100%;
+}
+
