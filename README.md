@@ -30,7 +30,16 @@ Whenever you update your configuration (more precisely, when there is a chance a
 All dependencies listed here can be installed using `brew install <program>` :
 - `neovim`
 - `fish`
-- `tmux`
+- `lazygit`
+
+### `fish`
+
+The simplest way, provided `homebrew` is installed, is to run :
+```shell
+/opt/homebrew/bin/brew install fish
+sudo echo "/opt/homebrew/bin/fish" >> /etc/shells
+chsh -s /opt/homebrew/bin/fish
+```
 
 ### `clangd`
 
