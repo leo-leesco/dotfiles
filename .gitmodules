@@ -1,6 +1,3 @@
 [submodule ".config"]
 	path = .config
 	url = git@github.com:leo-leesco/.config.git
-[submodule ".tmux"]
-	path = .tmux
-	url = git@github.com:leo-leesco/.tmux.git
